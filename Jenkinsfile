@@ -48,7 +48,7 @@ stage(‘package’)
       {
         steps
         {
-          sh 'docker build -t deeeksha/capstone:${GIT_COMMIT} . '
+          sh 'docker build -t deekshaaa/capstone:${GIT_COMMIT} . '
         }
       }
       stage('pushing docker image')
@@ -56,7 +56,7 @@ stage(‘package’)
         steps{
           sh '''
           echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin
-          docker push deeeksha/capstone:${GIT_COMMIT} 
+          docker push deekshaaa/capstone:${GIT_COMMIT} 
           docker logout
           '''
 
