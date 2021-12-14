@@ -19,7 +19,7 @@ stages
     }
 }
 
-  stage(“npm run”)
+  stage('npm run')
 {
     steps
     {
