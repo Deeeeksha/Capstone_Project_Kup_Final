@@ -40,20 +40,20 @@ stages
     }
   }
 
-stage(‘package’)
+stage("package")
 {
   when {
     branch 'prod'
   }
     stages{
-      stage('building docker image')
+      stage("building docker image")
       {
         steps
         {
           sh 'docker build -t deeeksha/capstone:${GIT_COMMIT} . '
         }
       }
-      stage('pushing docker image')
+      stage("pushing docker image")
       {
         steps{
           sh '''
