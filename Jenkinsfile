@@ -1,4 +1,4 @@
-Pipeline
+pipeline
 {
     agent any
     tools 
@@ -11,21 +11,32 @@ Pipeline
 
 stages
   {
-  stage(“install npm”)
-{
+
+  stage('install node modules')
+  {
     steps
     {
       sh 'npm install'
     }
-}
 
-  stage(“npm run”)
-{
+  }
+  
+
+  stage('install node modules for client')
+  {
+      when{
+          branch 'test'
+      }
     steps
     {
-      sh 'npm run build'
+       
+      sh '''
+      cd client
+      npm install
+      '''
     }
-}
+  }
+
 
 stage(‘package’)
 {
@@ -54,4 +65,5 @@ stage(‘package’)
     }
 }
 
+}
 }
