@@ -18,18 +18,9 @@ stages
       sh 'npm install'
     }
   }
-  stage('install node modules for client')
-  {
-    steps
-    {
-      sh '''
-      cd client
-      npm install
-      '''
-    }
-  }
+  
 
-  stage('npm run build for client')
+  stage('install node modules for client')
   {
       when{
           branch 'test'
@@ -39,7 +30,7 @@ stages
        
       sh '''
       cd client
-      npm run build
+      npm install
       '''
     }
   }
