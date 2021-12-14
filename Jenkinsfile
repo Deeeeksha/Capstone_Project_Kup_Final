@@ -11,7 +11,7 @@ Pipeline
 
 stages
   {
-  stage(“install npm”)
+  stage('install npm')
 {
     steps
     {
