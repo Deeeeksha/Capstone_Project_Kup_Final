@@ -46,7 +46,7 @@ stage(‘package’)
       {
         steps
         {
-          sh 'docker build -t deeeksha/capstone:${GIT_COMMIT} . '
+          sh 'docker build -t deekshaaa/capstone:${GIT_COMMIT} . '
         }
       }
       stage('pushing docker image')
