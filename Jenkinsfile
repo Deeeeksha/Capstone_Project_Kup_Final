@@ -11,14 +11,14 @@ pipeline
 
 stages
   {
-  stage(“install node modules”)
+  stage('install node modules')
   {
     steps
     {
       sh 'npm install'
     }
   }
-  stage(“install node modules for client”)
+  stage('install node modules for client')
   {
     steps
     {
@@ -29,7 +29,7 @@ stages
     }
   }
 
-  stage(“npm run build for client”)
+  stage('npm run build for client')
   {
       when{
           branch 'test'
@@ -40,13 +40,13 @@ stages
     }
   }
 
-stage("package")
+stage('package')
 {
   when {
     branch 'prod'
   }
     stages{
-      stage("building docker image")
+      stage('building docker image')
       {
         steps
         {
